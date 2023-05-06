@@ -54,11 +54,6 @@ function FavoritePage() {
     }
     return (
         <div className='Favorite'>
-            <div className='Mobile_app_offer'>
-                <h2>Hello,</h2>
-                <h3>Thanks For Visiting OSKUN</h3>
-                <p>But unfortunatly the website Didn't  Provide the Best Experince For Mobile User, You Can Try Our App on GooglePlay or AppStore</p>
-            </div>
             <div className='top'>
                 <Navbar></Navbar>
             </div>
