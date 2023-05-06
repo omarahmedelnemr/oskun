@@ -1,41 +1,44 @@
-body{
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* body{
+
+} */
+@media only screen and (max-width: 800px) {
+    body {
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  }
 #mobileBlock{
     background-color: #2475ec; 
     color: white;
     text-align: center;
-    /* height: 100vh; */
-    /* width: 100%; */
-    padding: 10% 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
     margin: 10px;
+    padding: 25px;
 }
 
 #mobileBlock .row{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: baseline;
-}
-
-#mobileBlock .row img{
-    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 #mobileBlock .row a{
     width: 40%;
 }
 
+    
+#mobileBlock .row img{
+    width: 135px;
+}
 #mobileBlock .row .appStore{
     background-color: black;
-    border-radius: 10px;
-    width: 95%;
+    border-radius: 8px;
+    width: 105px;
 }
