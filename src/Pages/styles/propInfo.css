@@ -1,0 +1,172 @@
+.propDetails{
+ display: flex;
+ flex-direction: column;
+ padding: 10px 10%;
+
+}
+.propDetails  .imgShow{
+    margin-bottom: 20px;
+}
+.propDetails  .imgShow #currentimg{
+    width: 100%;
+    height: 620px;
+    border-radius: 10px;
+}
+.propDetails .imgList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 120px;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.propDetails .imgList .active{
+    border:5px solid black;
+    transition: 0.5s;
+
+}
+.propDetails .imgList img{
+    transition: 0.5s;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border:5px solid white;
+    border-radius: 10px;
+
+}
+.propDetails .propInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 15px;
+}
+.propDetails .propInfo .Details{
+    width: 60%;
+}
+.propDetails .propInfo .Details .name{
+    font-size: 25px;
+    font-weight: bolder;
+    margin: 15px 0px;
+}
+.propDetails .propInfo .Details .location svg{
+    margin-right: 10px;
+}
+.propDetails .propInfo .Details .rating svg{
+    color: #ffd743;
+}
+.propDetails .propInfo .Details .Features{
+    /* background-color: gray */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.propDetails .propInfo .Details .Features .Feature{
+    width: 30%;
+    background-color: #f0f0f08a;
+    border-radius: 8px;
+    margin: 0px 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3%;
+    font-size: 20px;
+}
+.propDetails .propInfo .Details .Features .Feature p{
+    margin: 0;
+}
+.propDetails .propInfo .Details .Features  .rentType{
+    flex-direction: column;
+    align-items: baseline;
+    font-size: 15px;
+
+}
+.propDetails .propInfo .Details .Features  .rentType p{
+    margin: 1px 0px;
+
+}
+
+
+.propDetails .propInfo .Details .propType{
+    font-size: 20px;
+    background-color: #2475ec;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+} 
+.propDetails .propInfo .Details .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} 
+.propDetails .propInfo .Details .description{
+    font-size: 20px;
+}
+.propDetails .propInfo .checkout{
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px;
+    width:400px;
+    height: 460px;
+    background-color: white;
+    box-shadow: -2px 8px 15px grey;
+    padding: 10px;
+    font-size: 20px;
+}
+.propDetails .propInfo .checkout .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.propDetails .propInfo .checkout .price{
+    font-weight: bolder;
+    color: #2475ec;
+}
+
+
+.propDetails .propInfo .checkout input[type="date"]{
+    width: 94%;
+    font-size: 20px;
+    padding: 5px 5px;
+}
+
+.propDetails .propInfo .checkout .checkoutButton{
+    text-decoration: none;
+    background-color: #2475ec;
+    color :white;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 10px;
+    
+}
+
+.propDetails .propInfo .checkout .sumup{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    /* font-weight: bolder; */
+    color: gray;
+    padding: 0px 15px;
+}
+.aboutOwner .subDiv h3{
+    margin-top: 0px;
+}
+.aboutOwner .subDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 20px;
+
+}
+.aboutOwner img{
+    width: 150px;
+    margin-right: 20px;
+    border-radius: 10px;
+}

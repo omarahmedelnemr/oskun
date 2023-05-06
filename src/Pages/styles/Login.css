@@ -1,0 +1,119 @@
+/* html{
+    background-image: url('../../Content/login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+#Login{
+    background-image: linear-gradient(rgb(231 231 255),#b6b6ff);
+    width: 100%;
+    right: 0px;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 10px 0px 0px 10px ; */
+}
+#LoginLeft{
+    background-image: url('../../Content/rentanimation.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 900px;
+    /* background-color: rgb(255, 255, 255); */
+    height: 90vh;
+    border-radius: 50px 0px 0px 50px;
+    text-align: center;
+    box-shadow: -6px 8px 20px 0px #9b9b9b;
+    z-index: 99;
+}
+#LoginLeft #WelcomeText{
+    position: relative;
+    border-radius: 50px 0px 0px 50px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.575);
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+/* padding: 50px; */
+}
+#LoginLeft #WelcomeText h1{
+    margin: 0px;
+    font-size: 70px;
+}
+#LoginLeft #WelcomeText h1 span{
+    color: blue;
+}
+#LoginLeft #WelcomeText h3{
+    font-size: 25px;
+}
+
+#LoginRight{
+    height: 90vh;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(108, 108, 255);  
+    border-radius: 0px 50px 50px 0px;
+    box-shadow: -6px 8px 20px 0px #9b9b9b;
+}
+#LoginRight h1{
+    font-size: 60px;
+    color: white;
+}
+.loginNav{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.loginNav #Hover{
+    position:relative;
+    width: 100px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: white;
+    box-shadow: -2px 2px 10px 0px black;
+    left: -170px;
+    
+}
+#loginRef:focus-within ~ #Hover{
+    left: -170px;
+}
+#signupRef:focus ~ #Hover{
+    left: -85px;
+}
+.col-3{
+    position: relative;
+    margin:0px;
+    margin-top:  40px;
+    margin-bottom: 10px;
+    width: 400px;
+}
+a{
+    margin-bottom:  40px ;
+}/*necessary to give position: relative to parent.*/
+input[type="text"],input[type="password"],input[type="number"],input[type="email"]{font: 15px/24px "Lato", Arial, sans-serif;z-index: 99; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+
+
+
+.effect-22, 
+.effect-23, 
+.effect-24{border: 0; padding: 7px 15px; border: 1px solid #ccc; position: relative; background: transparent;}
+
+.effect-22 ~ .focus-bg{position: absolute; left: 0; top: 0; width: 0; height: 100%; background-color: transparent; transition: 0.4s; z-index: 98;}
+.effect-22:focus ~ .focus-bg, 
+.has-content.effect-22 ~ .focus-bg{transition: 0.4s; width: 100%; background-color: #ededed;}
+.effect-22 ~ label{position: absolute; left: 14px;z-index: 98; width: 100%; top: 10px; color: #ffffffe0; transition: 0.3s; letter-spacing: 0.5px;}
+.effect-22:focus ~ label, .has-content.effect-22 ~ label{top: -18px; left: 0; font-size: 12px; color: #ffffffe0; transition: 0.3s;}
+.effect-22:not(:placeholder-shown) ~ label{
+    top: -18px; left: 0; font-size: 12px; color: #ffffffe0; transition: 0.3s;
+}
+.effect-22:not(:placeholder-shown) ~ .focus-bg{
+    transition: 0.4s; width: 100%; background-color: #ededed;
+}

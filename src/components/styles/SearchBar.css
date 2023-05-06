@@ -1,0 +1,33 @@
+.searchBar{
+    border:1px solid black;
+    width: 50%;
+    height: 40px;
+    margin: auto;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    position: relative;
+    background-color: white;
+    
+    /* padding: 1px; */
+}
+.searchBar input{
+    /* width: 100%; */
+    flex-grow: 40;
+    height: 90%;
+    border: none;
+    border-radius: 50px 0px 0px 50px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 2px 20px;
+    font-size: 20px;
+}
+.searchBar input:focus{
+    outline: none;
+}
+.searchBar .seacrhButton{
+    /* width: 10%; */
+    flex-grow: 1;
+    font-size: 25px;
+}

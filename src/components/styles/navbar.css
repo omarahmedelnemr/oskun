@@ -1,0 +1,81 @@
+.Navbar{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0px 5%;
+    width: 90%;
+    box-shadow: 0px 4px 10px #b9b9b9;
+    background-color: white;
+    top: 0px;
+    z-index: 999;
+}
+.Navbar h1 a{
+    text-decoration: none;
+    color:black;
+}
+.Navbar h1 span{
+    color: #2475ec;
+    /* font-style: italic; */
+}
+.Navbar .navLeft{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
+}
+.Navbar .navLeft a[href="/login"],.Navbar .navLeft a[href="/profile"],.Navbar .navLeft a[href="/addprop"]{
+    text-decoration: none;
+    /* color: white; */
+    /* background-color: #2475ec; */
+    padding: 15px;
+    border-radius: 20px;
+    margin: 0px;
+}
+.Navbar .navLeft a[href="/signup"]{ 
+    text-decoration: none;
+    color: white;
+    background-color: #2475ec;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 0px;
+}
+.Navbar .navLeft button:focus ~ .dropDown{
+
+    padding: 15px 0px;
+    height: 232px;
+    color: red;
+}
+.Navbar .navLeft button{
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    padding: 18px 5px ;
+    margin: 0px;
+}
+.Navbar .navLeft .dropDown{
+    transition: 1s;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 75px;
+    background-color: white;
+    padding: 0px;
+    padding-bottom: 0px;
+    width: 110px;
+    height: 0px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: -6px 8px 7px #e3e3e3;
+}
+.Navbar .navLeft .dropDown a{
+    text-decoration: none;
+    color: black;
+    margin: 0px;
+    padding: 20px 0px;
+}
+.Navbar .navLeft .dropDown a:hover{
+    transition: 0.5s;
+    background-color: rgb(206, 206, 206);
+}
