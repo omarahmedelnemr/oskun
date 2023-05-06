@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import './styles/propInfo.css'
-import { useLocation, useParams, useSearchParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navbar from '../components/navbar';
-import image from '../Content/login.jpg'
-import userImg from '../Content/user.png'
+
 
 function PropInfoPage() {
 

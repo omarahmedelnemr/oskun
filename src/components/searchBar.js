@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles/SearchBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 function SearchBar() {
   return (

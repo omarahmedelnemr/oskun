@@ -1,7 +1,5 @@
 import React from 'react';
 import './styles/profile.css'
-import rentAnimation from '../Content/rentanimation.jpg'
-import Button from '../components/Button';
 import Navbar from '../components/navbar';
 function ProfilePage() {
     const userData = {

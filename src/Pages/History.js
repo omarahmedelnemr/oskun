@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './styles/Home.css'
-import rentAnimation from '../Content/rentanimation.jpg'
-import Button from '../components/Button';
 import HomeCard from '../components/Card';
 import Navbar from '../components/navbar';
-import SearchBar from '../components/searchBar';
 import image from '../Content/login.jpg'
-import Homeimg from '../Content/Home.jpg'
-import BackendLink from '../backendLink';
-import axios from 'axios';
 function HistoryPage() {
     
     // const [history,setHistory] = useState([])    

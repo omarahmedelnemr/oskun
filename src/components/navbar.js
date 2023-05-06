@@ -1,9 +1,7 @@
 import React from 'react';
 import './styles/navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import SearchBar from './searchBar';
-import Button from './Button';
 function Navbar() {
   return (
         <div className='Navbar'>

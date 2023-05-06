@@ -3,8 +3,6 @@ import './styles/Home.css'
 import HomeCard from '../components/Card';
 import Navbar from '../components/navbar';
 import image from '../Content/login.jpg'
-import BackendLink from '../backendLink';
-import axios from 'axios';
 function FavoritePage() {
     
     // const [favorite,setFavorite] = useState([])    

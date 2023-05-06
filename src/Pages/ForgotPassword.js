@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles/Login.css'
-import rentAnimation from '../Content/rentanimation.jpg'
 import Button from '../components/Button';
 function ForgotPassword() {
   return (
