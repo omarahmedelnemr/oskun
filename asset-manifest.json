@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/omarahmedelnemr/oskun/static/css/main.16002b10.css",
-    "main.js": "/omarahmedelnemr/oskun/static/js/main.aff8a8a8.js",
-    "static/js/787.9437c37d.chunk.js": "/omarahmedelnemr/oskun/static/js/787.9437c37d.chunk.js",
-    "static/media/rentanimation.jpg": "/omarahmedelnemr/oskun/static/media/rentanimation.0b84ff55428b1a88003b.jpg",
-    "static/media/Home.jpg": "/omarahmedelnemr/oskun/static/media/Home.8f72c1facbfd30f240fc.jpg",
-    "static/media/googlePlay1.png": "/omarahmedelnemr/oskun/static/media/googlePlay1.68b0b4ca44cc0b8e6108.png",
-    "static/media/login.jpg": "/omarahmedelnemr/oskun/static/media/login.6c6905ea77883f979ffa.jpg",
-    "static/media/logo.svg": "/omarahmedelnemr/oskun/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/omarahmedelnemr/oskun/index.html",
-    "main.16002b10.css.map": "/omarahmedelnemr/oskun/static/css/main.16002b10.css.map",
-    "main.aff8a8a8.js.map": "/omarahmedelnemr/oskun/static/js/main.aff8a8a8.js.map",
-    "787.9437c37d.chunk.js.map": "/omarahmedelnemr/oskun/static/js/787.9437c37d.chunk.js.map"
+    "main.css": "/oskun.hithub.io/static/css/main.5b471bf3.css",
+    "main.js": "/oskun.hithub.io/static/js/main.244c739f.js",
+    "static/js/787.9437c37d.chunk.js": "/oskun.hithub.io/static/js/787.9437c37d.chunk.js",
+    "static/media/rentanimation.jpg": "/oskun.hithub.io/static/media/rentanimation.0b84ff55428b1a88003b.jpg",
+    "static/media/Home.jpg": "/oskun.hithub.io/static/media/Home.8f72c1facbfd30f240fc.jpg",
+    "static/media/googlePlay1.png": "/oskun.hithub.io/static/media/googlePlay1.68b0b4ca44cc0b8e6108.png",
+    "static/media/login.jpg": "/oskun.hithub.io/static/media/login.6c6905ea77883f979ffa.jpg",
+    "static/media/logo.svg": "/oskun.hithub.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/oskun.hithub.io/index.html",
+    "main.5b471bf3.css.map": "/oskun.hithub.io/static/css/main.5b471bf3.css.map",
+    "main.244c739f.js.map": "/oskun.hithub.io/static/js/main.244c739f.js.map",
+    "787.9437c37d.chunk.js.map": "/oskun.hithub.io/static/js/787.9437c37d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.16002b10.css",
-    "static/js/main.aff8a8a8.js"
+    "static/css/main.5b471bf3.css",
+    "static/js/main.244c739f.js"
   ]
 }
