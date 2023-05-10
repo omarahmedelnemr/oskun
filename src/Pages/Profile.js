@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/profile.css'
 import Navbar from '../components/navbar';
+import jwt_decode from 'jwt-decode' // import dependency
+import axios from 'axios';
+import BackendLink from '../backendLink';
+
 function ProfilePage() {
-    const userData = {
-        name:"omar ahmed",
-        imgDir:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg",
-        email:"email@gmail.com",
-        phoneNumber:"010011012",
-        showNumber:true
-    }
+    const token = jwt_decode(localStorage.getItem('jwt'))
+    console.log(token)
+    const [userData,setUserData] = useState(token)
+    useEffect(()=> {
+        axios.get(`${BackendLink}/profile?id=${token.id}`).then((res)=>{
+            console.log(res.data.message)
+            if (res.data.message == 'Done'){
+                setUserData(res.data.data)
+            }
+        })
+    },[])
+    // const userData = {
+    //     name:"omar ahmed",
+    //     imgDir:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg",
+    //     email:"email@gmail.com",
+    //     phoneNumber:"010011012",
+    //     showNumber:true
+    // }
   return (
         <div id='Profile'>
             <Navbar></Navbar>

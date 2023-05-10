@@ -23,7 +23,9 @@
     margin-top: 0px;
     font-size: 40px;
 }
-#Profile .user .userInfo a{
+#Profile .user .userInfo a,#Profile .user .userInfo button{
+    border: 0px;
+    cursor: pointer;
     text-decoration: none;
     color: white;
     background-color: #2475ec;

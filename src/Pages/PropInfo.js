@@ -1,8 +1,10 @@
-import React, {  useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import './styles/propInfo.css'
 import {  useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navbar from '../components/navbar';
+import axios from 'axios';
+import BackendLink from '../backendLink';
 
 
 function PropInfoPage() {
@@ -24,56 +26,67 @@ function PropInfoPage() {
 
     const propID = useParams().propID
     const [days,setDays] = useState('-')
-    // const [data,setData] = useState([])
-
-    const data = {
-        id:10,
-        type:'vella',
-        name:"Vella Ahmed",
-        location:"First Distrect",
-        publishDate:"12/12/2022",
-        price:4000,
-        desctiption:"this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home",
-        rating:3.1,
-        beds:4,
-        baths:2,
-        cash:false,
-        size:400,
-        dayRent:false,
-        weekRent:false,
-        monthRent:true,
-        mainImg:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg",
-        images:[
-            {
-                imageDirectory:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg"
-            },
-            {
-                imageDirectory:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg"
-            },
-            {
-                imageDirectory:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg"
-            },
-            {
-                imageDirectory:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg"
-            },
-            {
-                imageDirectory:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg"
+    const [data,setData] = useState([])
+    const [mainImg,setMainImg] = useState('')
+    const [smallImgList,setSmallImgList] = useState([])
+    useEffect(()=>{
+        axios.get(`${BackendLink}/HouseDetails?id=${propID}`).then((res)=>{
+            console.log(res.data)
+            console.log("Images: ",res.data.data.images)
+            if (res.data.message =='Done'){
+                    setData(res.data.data)
+                    setMainImg(<img src={res.data.data.mainImg} id='currentimg'/>)
+                    var tempsmallImgList = [<img src={res.data.data.mainImg} className='smallImg active' onClick={replaceCurrent}/>]
+                    for(var i=0;i<res.data.data.images.length;i++){
+                        tempsmallImgList.push(<img src={res.data.data.images[i].imageDirectory} className='smallImg' onClick={replaceCurrent}/>)
+                    }
+                    setSmallImgList(tempsmallImgList)
             }
-        ],
-        owner:{
-            name:"omar ahmed",
-            imgDir:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg",
-            email:"email@gmail.com",
-            phoneNumber:"010011012",
-            showNumber:true
-        }
-    }
 
-    var smallImgList = [<img src={data.images[0].imageDirectory} className='smallImg active' onClick={replaceCurrent}/>]
-    var mainImg = <img src={data.mainImg} id='currentimg'/>
-    for(var i=1;i<data.images.length;i++){
-        smallImgList.push(<img src={data.images[i].imageDirectory} className='smallImg' onClick={replaceCurrent}/>)
-    }
+        })
+    },[])
+    // const data = {
+    //     id:10,
+    //     type:'vella',
+    //     name:"Vella Ahmed",
+    //     location:"First Distrect",
+    //     publishDate:"12/12/2022",
+    //     price:4000,
+    //     desctiption:"this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home this is home",
+    //     rating:3.1,
+    //     beds:4,
+    //     baths:2,
+    //     cash:false,
+    //     size:400,
+    //     dayRent:false,
+    //     weekRent:false,
+    //     monthRent:true,
+    //     mainImg:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg",
+    //     images:[
+    //         {
+    //             imageDirectory:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg"
+    //         },
+    //         {
+    //             imageDirectory:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg"
+    //         },
+    //         {
+    //             imageDirectory:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg"
+    //         },
+    //         {
+    //             imageDirectory:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg"
+    //         },
+    //         {
+    //             imageDirectory:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg"
+    //         }
+    //     ],
+    //     owner:{
+    //         name:"omar ahmed",
+    //         imgDir:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg",
+    //         email:"email@gmail.com",
+    //         phoneNumber:"010011012",
+    //         showNumber:true
+    //     }
+    // }
 
     return (
         <div className=''>
@@ -96,7 +109,7 @@ function PropInfoPage() {
                         <p className='location'><FontAwesomeIcon icon="fa-solid fa-location-dot" /> {data.location}</p>
                         <p className='rating'><FontAwesomeIcon icon="fa-solid fa-star" /> {data.rating}</p>
                     </div>  
-                    <p className='description'>{data.desctiption}</p>
+                    <p className='description'>{data.description}</p>
 
                     <div className='Features'>
                         <div className='Feature'>
@@ -121,7 +134,7 @@ function PropInfoPage() {
                     <div className='row'>
  
                     </div>
-                    <div className='aboutOwner'>
+                    {/* <div className='aboutOwner'>
                         <h2 className='name'>About Owner</h2>
                         <div className='subDiv'>
                             <div>
@@ -134,7 +147,7 @@ function PropInfoPage() {
 
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
                 <div className='checkout'>

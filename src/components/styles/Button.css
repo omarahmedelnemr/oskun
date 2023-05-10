@@ -5,13 +5,16 @@
     height: 50px;
     box-shadow: -1px 2px 6px #666666;
     transition: 2s;
+    cursor: pointer;
 
 }
 .normal_button button:hover{
     box-shadow: -1px 2px 10px #666666;
+    cursor: pointer;
 
 }
 .normal_button{
     width: 200px;
+    cursor: pointer;
     margin: 20px auto;
 }

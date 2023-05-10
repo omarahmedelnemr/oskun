@@ -14,6 +14,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: -80px;
     /* border-radius: 10px 0px 0px 10px ; */
 }
 #LoginLeft{
@@ -94,6 +95,24 @@
     margin-top:  40px;
     margin-bottom: 10px;
     width: 400px;
+}
+.wrongMassege{
+    margin: 0px auto;
+    text-align: center;
+    color: red;
+}
+.massegeShow{
+    display: block;
+}
+.massegeHide{
+    display: none;
+
+}
+.Center{
+    border-radius: 50px !important;
+}
+a[href ='./home']{
+    text-decoration: none;
 }
 a{
     margin-bottom:  40px ;

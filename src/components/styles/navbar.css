@@ -32,14 +32,16 @@
     padding: 15px;
     border-radius: 20px;
     margin: 0px;
+    cursor: pointer;
 }
-.Navbar .navLeft a[href="/signup"]{ 
+.Navbar .navLeft a[href="/register"]{ 
     text-decoration: none;
     color: white;
     background-color: #2475ec;
     padding: 15px;
     border-radius: 20px;
     margin: 0px;
+    cursor: pointer;
 }
 .Navbar .navLeft button:focus ~ .dropDown{
 

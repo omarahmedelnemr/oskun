@@ -2,13 +2,50 @@ import React from 'react';
 import './styles/profile.css'
 import './styles/Login.css'
 import Navbar from '../components/navbar';
+import Button from '../components/Button';
+import axios from 'axios';
+import BackendLink from '../backendLink';
+import { useNavigate } from 'react-router-dom';
+import jwt_decode from "jwt-decode";
+
 function PasswordChange() {
+    const navigate = useNavigate()
+    const token = jwt_decode(localStorage.getItem('jwt'))
     const userData = {
-        name:"omar ahmed",
-        imgDir:"https://www.propertyfinder.eg/blog/wp-content/uploads/2021/09/New_Borg_El_Arab_city_collection-800x450.jpeg",
-        email:"email@gmail.com",
-        phoneNumber:"010011012",
+        name:token.name,
+        imgDir:token.imgDir,
+        email:token.email,
+        phoneNumber:token.phoneNumber,
         showNumber:true
+    }
+    async function change(){
+        const inputs = document.getElementsByTagName("input")
+        console.log(inputs)
+        const token = localStorage.getItem("jwt")
+        const userData = jwt_decode(token)
+
+        // const oldPassword = inputs[1].value
+        const newPassword = inputs[1].value
+        const reNewPassword = inputs[2].value
+        console.log(newPassword)
+        console.log(reNewPassword)
+        console.log(newPassword==reNewPassword)
+        if (newPassword ==reNewPassword){
+            document.getElementsByClassName("wrongMassege")[0].innerHTML = ''
+            try{
+                const res = await axios.post(`${BackendLink}/changePassword`, {email:userData.email,newpassword:newPassword})
+                if (res.data.massege == "User Changed"){
+                    navigate('/profile')
+                }
+            }catch{
+            document.getElementsByClassName("wrongMassege")[0].innerHTML = 'old Password Not Correct'
+                
+            }
+
+
+        }else{
+            document.getElementsByClassName("wrongMassege")[0].innerHTML = 'Wrong Match'
+        }
     }
   return (
         <div id='Profile'>
@@ -18,12 +55,14 @@ function PasswordChange() {
                 <img src={userData.imgDir}/>
 
                 </div>
-                <form className='userInfo'> 
-                    <div class="col-3 input-effect">
+                
+                <div className='userInfo'> 
+                <p className='wrongMassege'></p>
+                    {/* <div class="col-3 input-effect">
                         <input class="effect-22" type="password" placeholder=" "/>
                         <label>old Password</label>
                         <span class="focus-bg"></span>
-                    </div>
+                    </div> */}
                     <div class="col-3 input-effect">
                         <input class="effect-22" type="password" placeholder=" "/>
                         <label>new Password</label>
@@ -35,9 +74,9 @@ function PasswordChange() {
                         <span class="focus-bg"></span>
                     </div>
                     <div className='row'>
-                        <a href="/profile/">Submit</a>
+                        <button onClick={change}>Submit</button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
   )

@@ -56,3 +56,7 @@ body{
     width: 10%;
     margin: 0px;
 }
+
+.History .card{
+    height: 520px;
+}

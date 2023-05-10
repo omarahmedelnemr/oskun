@@ -3,18 +3,53 @@ import './styles/Login.css'
 import './styles/addProp.css'
 
 import Navbar from '../components/navbar';
+import jwtDecode from 'jwt-decode';
+import axios from 'axios';
+import BackendLink from '../backendLink';
+import { useNavigate } from 'react-router-dom';
 function AddProp() {
-    
-
+    const tokenData = jwtDecode(localStorage.getItem('jwt'))
+    const navigate = useNavigate()
+    function submitAppProp(){
+        
+        var formData = {
+            "owner":tokenData.id,
+            "name":document.getElementById('addPropName').value,
+            "location":document.getElementById('addPropLocation').value,
+            "price":document.getElementById('addPropPrice').value,
+            "description":document.getElementById('addPropDescription').value,
+            "beds":document.getElementById('addPropBeds').value,
+            "baths":document.getElementById('addPropBaths').value,
+            "rooms":document.getElementById('addPropRooms').value,
+            "size":document.getElementById('addPropSize').value,
+            "mainImg":document.getElementById("addPropMainimg").value,
+            "type":document.getElementById("vella").checked?"Vella":"Appartment",
+            "cash":document.getElementById("cashYes").checked,
+            "dayRent":document.getElementById("day").checked,
+            "weekRent":document.getElementById("week").checked,
+            "images":[
+                {"imageDirectory":document.getElementById('addPropimg1').value},
+                {"imageDirectory":document.getElementById('addPropimg2').value}
+            ]
+        }
+        console.log(formData)
+        axios.post(`${BackendLink}/addhouse`,formData).then((res)=>{
+            if (res.data.message =="Done"){
+                navigate('/home')
+            }else{
+                console.log("Somthing Went Wrong")
+            }
+        })
+    }
 
     return (
         <div id='addProp'>
             <Navbar></Navbar>
-            <form>
+            <div id='form'> 
                 <p id='fromTitle'>New Property</p>
                 <div className='row'>
                         <div class="col-3 input-effect">
-                            <input class="effect-22" type="text" placeholder=" "/>
+                            <input id = "addPropName" class="effect-22" type="text" placeholder=" "/>
                             <label>Name</label>
                             <span class="focus-bg"></span>
                         </div>
@@ -22,41 +57,41 @@ function AddProp() {
                     </div>
                     <div className='row'>
                         <div class="col-3 input-effect">
-                            <input class="effect-22" type="text" placeholder=" "/>
+                            <input id = "addPropLocation"class="effect-22" type="text" placeholder=" "/>
                             <label>Location</label>
                             <span class="focus-bg"></span>
                         </div>
                         <div class="col-3 input-effect">
-                            <input class="effect-22" type="number" placeholder=" "/>
+                            <input id = "addPropPrice"class="effect-22" type="number" placeholder=" "/>
                             <label>Price per Month</label>
                             <span class="focus-bg"></span>
                         </div>
                     </div>
                     <div className='row'>
                         <div class="col-3 input-effect">
-                            <input class="effect-22" type="text" placeholder=" "/>
+                            <input id = "addPropDescription" class="effect-22" type="text" placeholder=" "/>
                             <label>Desctiption</label>
                             <span class="focus-bg"></span>
                         </div>
                     </div>
                     <div className='row'>
                         <div class="col-3 input-effect">
-                            <input class="effect-22" type="number" placeholder=" "/>
+                            <input id ="addPropBeds" class="effect-22" type="number" placeholder=" "/>
                             <label>beds</label>
                             <span class="focus-bg"></span>
                         </div>
                         <div class="col-3 input-effect">
-                            <input class="effect-22" type="number" placeholder=" "/>
+                            <input id ="addPropBaths" class="effect-22" type="number" placeholder=" "/>
                             <label>baths</label>
                             <span class="focus-bg"></span>
                         </div>
                         <div class="col-3 input-effect">
-                            <input class="effect-22" type="number" placeholder=" "/>
+                            <input id ="addPropRooms" class="effect-22" type="number" placeholder=" "/>
                             <label>rooms</label>
                             <span class="focus-bg"></span>
                         </div>
                         <div class="col-3 input-effect">
-                            <input class="effect-22" type="number" placeholder=" "/>
+                            <input id ="addPropSize" class="effect-22" type="number" placeholder=" "/>
                             <label>size (m x m)</label>
                             <span class="focus-bg"></span>
                         </div>
@@ -93,14 +128,26 @@ function AddProp() {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <input type='file' multiple onChange={console.log("hello")}/>
-                    </div>
+                        <div class="col-3 input-effect">
+                            <input id ="addPropMainimg" class="effect-22" type="text" placeholder=" "/>
+                            <label>Main Image Link</label>
+                            <span class="focus-bg"></span>
+                        </div>
+                        <div class="col-3 input-effect">
+                            <input id ="addPropimg1" class="effect-22" type="text" placeholder=" "/>
+                            <label>Another Image Link</label>
+                            <span class="focus-bg"></span>
+                        </div>
+                        <div class="col-3 input-effect">
+                            <input id ="addPropimg2" class="effect-22" type="text" placeholder=" "/>
+                            <label>Another Image Link</label>
+                            <span class="focus-bg"></span>
+                        </div>
 
-                    <input type='submit' />
+                    <input type='submit'  onClick={submitAppProp}/>
 
 
-            </form>
+            </div>
         </div>
     )
 }
