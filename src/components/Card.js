@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/Card.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import axios from 'axios';
 
 function HomeCard({propID,imgSrc,location,name,price,rating,beds,baths,size,booked,fav,historyCardState,startedat,endedat}) {
     var dispalyState;
@@ -23,7 +24,10 @@ function HomeCard({propID,imgSrc,location,name,price,rating,beds,baths,size,book
             <p>Ended at:{endedat}</p>
         </div>
     }
-
+    function add_to_favorite(){
+        console.log("favorite: ",propID)
+        
+    }
   return (
         <div className='card'>
             <div className='isBooked' style={{display:dispalyState}}><p>Booked</p></div>
@@ -34,7 +38,7 @@ function HomeCard({propID,imgSrc,location,name,price,rating,beds,baths,size,book
                     <FontAwesomeIcon icon="fa-solid fa-location-dot" />
                     <p>{location}</p>
                 </div>
-                <div className='add_to_avorite'>
+                <div className='add_to_avorite' onClick={add_to_favorite}>
                     {heart}
                 </div>
             </div>

@@ -33,57 +33,6 @@ function HomePage() {
 
         })
     },[])
-    // const available = [{
-    //     id:12,
-    //     imgSrc:image,
-    //     location:"First Distrect",
-    //     name:"Vella Ahmed",
-    //     price:4000,
-    //     rating:3.0,
-    //     beds:4,
-    //     baths:2,
-    //     size:400,
-    //     fav:true
-    // },
-    // {
-    //     id:10,
-    //     imgSrc:image,
-    //     location:"First Distrect",
-    //     name:"Vella Ahmed",
-    //     price:4000,
-    //     rating:3.0,
-    //     beds:4,
-    //     baths:2,
-    //     size:400,
-    //     fav:false
-    // },
-    // {
-    //     id:9,
-    //     imgSrc:image,
-    //     location:"First Distraaect",
-    //     name:"Vella Ahmed",
-    //     price:4000,
-    //     rating:3.0,
-    //     beds:4,
-    //     baths:2,
-    //     size:400,
-    //     fav:false
-    // }]
-
-    // var cards =[]
-    // for(var i=0;i<available.length;i++){
-    //     cards.push(<HomeCard 
-    //         propID={available[i].id} 
-    //         imgSrc={available[i].imgSrc} 
-    //         location={available[i].location} 
-    //         name={available[i].name} 
-    //         price={available[i].price} 
-    //         rating={available[i].rating} 
-    //         beds={available[i].beds} 
-    //         baths={available[i].baths} 
-    //         size={available[i].size} 
-    //         fav={available[i].fav}></HomeCard>)
-    // }
 
     return (
         <div className='Home'>

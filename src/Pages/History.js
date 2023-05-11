@@ -6,6 +6,9 @@ import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 import BackendLink from '../backendLink';
 function HistoryPage() {
+    console.log(localStorage.getItem("jwt"))
+    console.log("-----------------------------")
+    console.log(jwtDecode(localStorage.getItem('jwt')))
     const tokenData = jwtDecode(localStorage.getItem('jwt'))
     
     const [history,setHistory] = useState([])    
