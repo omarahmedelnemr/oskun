@@ -33,8 +33,8 @@ function PasswordChange() {
         if (newPassword ==reNewPassword){
             document.getElementsByClassName("wrongMassege")[0].innerHTML = ''
             try{
-                const res = await axios.post(`${BackendLink}/changePassword`, {email:userData.email,newpassword:newPassword})
-                if (res.data.massege == "User Changed"){
+                const res = await axios.post(`${BackendLink}/changePassword`, {email:userData.email,newPassword:newPassword})
+                if (res.data.message == "Done"){
                     navigate('/profile')
                 }
             }catch{
