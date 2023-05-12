@@ -1,5 +1,6 @@
 import React, {  useEffect, useState } from 'react';
 import './styles/propInfo.css'
+import './styles/loadingScreen.css'
 import {  useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navbar from '../components/navbar';
@@ -28,6 +29,7 @@ function PropInfoPage() {
     const [days,setDays] = useState('-')
     const [data,setData] = useState([])
     const [mainImg,setMainImg] = useState('')
+    const [load,setLoad] = useState(1)
     const [smallImgList,setSmallImgList] = useState([])
     useEffect(()=>{
         axios.get(`${BackendLink}/HouseDetails?id=${propID}`).then((res)=>{
@@ -42,9 +44,19 @@ function PropInfoPage() {
                     }
                     setSmallImgList(tempsmallImgList)
             }
-
+            setLoad(0)
         })
     },[])
+    useEffect( ()=>{
+        if(load==1){            
+            console.log("Loading ....")
+
+        }else{
+            document.getElementsByClassName("loadingScreen")[0].style.opacity =0
+            document.getElementsByClassName("loadingScreen")[0].style.height  = 0
+
+        }
+    })
     // const data = {
     //     id:10,
     //     type:'vella',
@@ -90,7 +102,9 @@ function PropInfoPage() {
 
     return (
         <div className=''>
-
+<div className='loadingScreen'>
+                <div></div>
+            </div>
         <Navbar></Navbar>
 
         <div className='propDetails'>

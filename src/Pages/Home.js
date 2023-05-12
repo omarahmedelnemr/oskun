@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './styles/Home.css'
+import './styles/loadingScreen.css'
 import HomeCard from '../components/Card';
 import Navbar from '../components/navbar';
 import image from '../Content/login.jpg'
@@ -8,7 +9,7 @@ import axios from 'axios';
 function HomePage() {
     
     const [cards,setCards] = useState([])
-
+    const [load,setLoad] = useState(1)
     
     useEffect(()=>{
         axios.get(`${BackendLink}/AvailableHouses`).then((res)=>{
@@ -29,13 +30,26 @@ function HomePage() {
                         fav={available[i].fav}></HomeCard>)
                 }
                 setCards(tempCard)
+                setLoad(0)
             }
 
         })
     },[])
+    useEffect( ()=>{
+        if(load==1){            
+            console.log("Loading ....")
 
+        }else{
+            document.getElementsByClassName("loadingScreen")[0].style.opacity =0
+            document.getElementsByClassName("loadingScreen")[0].style.height  = 0
+
+        }
+    })
     return (
         <div className='Home'>
+            <div className='loadingScreen'>
+                <div></div>
+            </div>
             <div className='top'>
                 <Navbar></Navbar>
             </div>
