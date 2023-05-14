@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/Card.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios';
 
 function HomeCard({propID,imgSrc,location,name,price,rating,beds,baths,size,booked,fav,historyCardState,startedat,endedat}) {
     var dispalyState;
+    const [favorite,setFav] = useState(fav)
     if (booked == true){
         dispalyState = 'flex'
     }else{
         dispalyState = 'none'
     }
     var heart;
-    if(fav){
+    if(favorite){
         heart =<FontAwesomeIcon icon="fa-solid fa-heart" />
     }else{
         heart = <FontAwesomeIcon icon="fa-regular fa-heart" />
@@ -26,7 +27,11 @@ function HomeCard({propID,imgSrc,location,name,price,rating,beds,baths,size,book
     }
     function add_to_favorite(){
         console.log("favorite: ",propID)
-        
+        if (favorite){
+            setFav(0)
+        }else{
+            setFav(1)
+        }
     }
   return (
         <div className='card'>

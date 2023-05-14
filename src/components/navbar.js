@@ -37,7 +37,7 @@ function Navbar() {
   return (
         <div className='Navbar'>
             <h1><a href='/home'><span>O</span>SKUN</a></h1>
-            <SearchBar></SearchBar>
+            {/* <SearchBar></SearchBar> */}
             {list}
         </div>
   )
